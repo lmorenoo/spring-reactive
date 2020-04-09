@@ -1,7 +1,6 @@
 package com.mitocode.springreactive.dto;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;

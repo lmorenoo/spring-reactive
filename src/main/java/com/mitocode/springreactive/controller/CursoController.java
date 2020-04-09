@@ -91,10 +91,10 @@ public class CursoController {
     @DeleteMapping("/{idCurso}")
     public Mono<ResponseEntity<Void>> eliminar(@Valid @PathVariable String idCurso){
         return cursoService.listarPorId(idCurso)
-                .flatMap(p -> {
-                    return cursoService.eliminar(p.getId())
-                            .then(Mono.just(new ResponseEntity<Void>(HttpStatus.NO_CONTENT)));
-                })
+                .flatMap(p ->
+                    cursoService.eliminar(p.getId())
+                            .then(Mono.just(new ResponseEntity<Void>(HttpStatus.NO_CONTENT)))
+                )
                 .defaultIfEmpty(ResponseEntity.notFound().build())
                 .onErrorMap(error ->
                         new EstudianteException(String.format("Error al eliminar el estudiante con Id: %s", idCurso))
