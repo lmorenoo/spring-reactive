@@ -4,8 +4,8 @@ spring:
       authentication-database: admin
       host: localhost
       username: root
-      password: pass
-      port: 27017
+      password: password
+      port: 27018
       database: academiaapp
 
 jjwt:
