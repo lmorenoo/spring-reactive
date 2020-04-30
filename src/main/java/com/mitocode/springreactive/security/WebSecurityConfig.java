@@ -54,6 +54,12 @@ public class WebSecurityConfig {
 				.pathMatchers("/login").permitAll()
 				.pathMatchers("/v2/login").permitAll()
 				.pathMatchers("/json/**").permitAll()
+				.pathMatchers("/v2/api-docs",
+						"/configuration/ui",
+						"/swagger-resources/**",
+						"/configuration/security",
+						"/swagger-ui.html",
+						"/webjars/**").permitAll()
 				.anyExchange().authenticated()
 				.and().build();
 	}

@@ -81,16 +81,16 @@ public class EstudianteController {
                 );
     }
 
-    @DeleteMapping("/{idStudent}")
-    public Mono<ResponseEntity<Void>> eliminar(@Valid @PathVariable String idStudent){
-        return estudianteService.listarPorId(idStudent)
+    @DeleteMapping("/{idEstudiante}")
+    public Mono<ResponseEntity<Void>> eliminar(@Valid @PathVariable String idEstudiante){
+        return estudianteService.listarPorId(idEstudiante)
                 .flatMap(p ->
                     estudianteService.eliminar(p.getId())
                             .then(Mono.just(new ResponseEntity<Void>(HttpStatus.NO_CONTENT)))
                 )
                 .defaultIfEmpty(ResponseEntity.notFound().build())
                 .onErrorMap(error ->
-                        new EstudianteException(String.format("Error al eliminar el estudiante con Id: %s", idStudent))
+                        new EstudianteException(String.format("Error al eliminar el estudiante con Id: %s", idEstudiante))
                 );
     }
 

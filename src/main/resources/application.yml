@@ -5,7 +5,7 @@ spring:
       host: localhost
       username: root
       password: password
-      port: 27018
+      port: 27017
       database: academiaapp
 
 jjwt:
@@ -16,3 +16,6 @@ springreactive:
   usuario: admin
   pass: root
 
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

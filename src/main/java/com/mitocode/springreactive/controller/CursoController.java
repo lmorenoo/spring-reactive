@@ -2,7 +2,6 @@ package com.mitocode.springreactive.controller;
 
 import com.mitocode.springreactive.dto.CursoDTO;
 import com.mitocode.springreactive.exceptions.CursoException;
-import com.mitocode.springreactive.exceptions.EstudianteException;
 import com.mitocode.springreactive.service.ICursoService;
 import com.mitocode.springreactive.utils.mapper.CursoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,7 +96,7 @@ public class CursoController {
                 )
                 .defaultIfEmpty(ResponseEntity.notFound().build())
                 .onErrorMap(error ->
-                        new EstudianteException(String.format("Error al eliminar el estudiante con Id: %s", idCurso))
+                        new CursoException(String.format("Error al eliminar el curso con Id: %s", idCurso))
                 );
     }
 }

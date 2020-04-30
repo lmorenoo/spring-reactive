@@ -22,6 +22,6 @@ public class EstudianteDTO {
     @NotNull(message = "El campo edad es requerido")
     @Positive(message = "El campo edad debe ser positivo")
     @Min(value = 4, message = "El campo edad debe ser minimo de 4 años")
-    @Max(value = 99, message = "El campo edad debe ser maximo de 5 años")
+    @Max(value = 99, message = "El campo edad debe ser maximo de 100 años")
     private int edad;
 }
